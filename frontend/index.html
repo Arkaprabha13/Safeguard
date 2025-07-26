@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeGuard - Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="./css/styles.css" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 floating-sparkles relative">
+    <!-- Background Effects -->
+    <div class="gradient-orb gradient-orb-1"></div>
+    <div class="gradient-orb gradient-orb-2"></div>
+    <div class="gradient-orb gradient-orb-3"></div>
+    
+    <!-- Main Container -->
+    <div class="min-h-screen flex items-center justify-center p-4 relative z-10">
+        <div class="w-full max-w-lg">
+            <!-- Main Card -->
+            <div class="login-card bg-white/10 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 p-6 sm:p-8 lg:p-10 relative overflow-hidden">
+                <!-- Decorative Elements -->
+                <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500"></div>
+                <div class="floating-elements"></div>
+                
+                <!-- Header Section -->
+                <header class="text-center mb-8 sm:mb-10 relative z-10">
+                    <!-- Logo -->
+                    <div class="mb-6 sm:mb-8 relative">
+                        <div class="logo-container w-20 h-20 sm:w-24 sm:h-24 mx-auto bg-gradient-to-br from-pink-500 to-purple-600 rounded-full flex items-center justify-center shadow-2xl">
+                            <i class="fas fa-shield-alt text-white text-2xl sm:text-3xl"></i>
+                            <div class="absolute inset-0 rounded-full bg-gradient-to-br from-pink-400 to-purple-500 opacity-50 animate-pulse"></div>
+                        </div>
+                        <!-- Premium Badge -->
+                        <div class="premium-badge absolute -top-1 -right-1 sm:-top-2 sm:-right-2 w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center shadow-lg">
+                            <i class="fas fa-sparkles text-yellow-900 text-xs sm:text-sm"></i>
+                        </div>
+                    </div>
+                    
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4 tracking-tight">
+                        Welcome <span class="text-gradient bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Back</span>
+                    </h1>
+                    <p class="text-white/70 text-base sm:text-lg font-medium">Sign in to your SafeGuard account</p>
+                </header>
+
+                <!-- Login Form -->
+                <form id="loginForm" class="space-y-6 sm:space-y-8 relative z-10">
+                    <!-- Email Field -->
+                    <div class="form-field">
+                        <label class="field-label">
+                            <div class="label-icon bg-gradient-to-br from-blue-500 to-cyan-500">
+                                <i class="fas fa-envelope text-white"></i>
+                            </div>
+                            <span>Email Address</span>
+                        </label>
+                        <div class="input-wrapper">
+                            <input 
+                                type="email" 
+                                id="email" 
+                                class="form-input focus:border-blue-400 focus:ring-blue-400"
+                                placeholder="Enter your email address"
+                                required
+                            >
+                            <div class="input-icon">
+                                <i class="fas fa-user-circle text-white/40"></i>
+                            </div>
+                        </div>
+                        <div id="emailError" class="field-error"></div>
+                    </div>
+
+                    <!-- Password Field -->
+                    <div class="form-field">
+                        <label class="field-label">
+                            <div class="label-icon bg-gradient-to-br from-purple-500 to-indigo-500">
+                                <i class="fas fa-lock text-white"></i>
+                            </div>
+                            <span>Password</span>
+                        </label>
+                        <div class="input-wrapper">
+                            <input 
+                                type="password" 
+                                id="password" 
+                                class="form-input pr-16 focus:border-purple-400 focus:ring-purple-400"
+                                placeholder="Enter your password"
+                                required
+                            >
+                            <div class="input-icon">
+                                <i class="fas fa-key text-white/40"></i>
+                            </div>
+                            <button type="button" id="togglePassword" class="password-toggle">
+                                <i class="fas fa-eye text-sm"></i>
+                            </button>
+                        </div>
+                        <div id="passwordError" class="field-error"></div>
+                    </div>
+
+                    <!-- Login Button -->
+                    <div class="submit-section">
+                        <button 
+                            type="submit" 
+                            id="loginBtn"
+                            class="login-button"
+                        >
+                            <span class="button-content">
+                                <span id="loginBtnText">Sign In to SafeGuard</span>
+                                <i id="loginSpinner" class="fas fa-spinner fa-spin ml-3 hidden"></i>
+                            </span>
+                            <div class="button-shine"></div>
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Social Login -->
+                <div class="social-section mt-8 sm:mt-10">
+                    <!-- Divider -->
+                    <div class="social-divider">
+                        <div class="divider-line"></div>
+                        <span class="divider-text">Or continue with</span>
+                        <div class="divider-line"></div>
+                    </div>
+                    
+                    <!-- Social Buttons -->
+                    <div class="social-buttons">
+                        <button class="social-btn google-btn" data-provider="Google">
+                            <div class="social-icon">
+                                <i class="fab fa-google"></i>
+                            </div>
+                            <span class="social-text">Google</span>
+                            <div class="social-shine"></div>
+                        </button>
+                        <button class="social-btn apple-btn" data-provider="Apple">
+                            <div class="social-icon">
+                                <i class="fab fa-apple"></i>
+                            </div>
+                            <span class="social-text">Apple</span>
+                            <div class="social-shine"></div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Footer Links -->
+                <footer class="mt-8 sm:mt-10 space-y-4 text-center relative z-10">
+                    <!-- Signup Link -->
+                    <div class="signup-link">
+                        <p class="text-white/70 text-sm sm:text-base">
+                            Don't have an account? 
+                            <a href="signup.html" class="link-styled text-pink-400 hover:text-pink-300 font-semibold underline underline-offset-2 transition-all duration-300">
+                                Sign up here
+                            </a>
+                        </p>
+                    </div>
+
+                    <!-- Security Notice -->
+                    <div class="security-notice">
+                        <div class="security-badge">
+                            <i class="fas fa-shield-check text-emerald-400"></i>
+                            <span class="text-white/60 text-sm font-medium">Your data is protected with end-to-end encryption</span>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="fixed top-4 right-4 z-50 space-y-2"></div>
+
+    <script src="./js/utils.js"></script>
+    <script src="./js/login.js"></script>
+</body>
+</html>

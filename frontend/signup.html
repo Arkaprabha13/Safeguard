@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeGuard - Sign Up</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="./css/styles.css" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 floating-sparkles relative">
+    <!-- Background Effects -->
+    <div class="gradient-orb gradient-orb-1"></div>
+    <div class="gradient-orb gradient-orb-2"></div>
+    <div class="gradient-orb gradient-orb-3"></div>
+    
+    <!-- Main Container -->
+    <div class="min-h-screen py-6 sm:py-8 px-4 relative z-10">
+        <div class="max-w-5xl mx-auto">
+            <!-- Main Card -->
+            <div class="signup-card bg-white/10 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 p-6 sm:p-8 lg:p-10 relative overflow-hidden">
+                <!-- Decorative Elements -->
+                <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500"></div>
+                <div class="floating-elements"></div>
+                
+                <!-- Header Section -->
+                <header class="text-center mb-8 sm:mb-10 relative z-10">
+                    <!-- Back Button -->
+                    <div class="flex justify-start mb-6">
+                        <button onclick="goToLogin()" class="back-button text-white/70 hover:text-white hover:bg-white/10 transition-all duration-300 rounded-full px-4 py-2 flex items-center gap-2 text-sm font-medium">
+                            <i class="fas fa-arrow-left"></i>
+                            <span class="hidden sm:inline">Back to Login</span>
+                            <span class="sm:hidden">Back</span>
+                        </button>
+                    </div>
+                    
+                    <!-- Logo -->
+                    <div class="mb-6 relative">
+                        <div class="logo-container w-20 h-20 mx-auto bg-gradient-to-br from-pink-500 to-purple-600 rounded-full flex items-center justify-center shadow-2xl">
+                            <i class="fas fa-shield-alt text-white text-2xl"></i>
+                            <div class="absolute inset-0 rounded-full bg-gradient-to-br from-pink-400 to-purple-500 opacity-50 animate-pulse"></div>
+                        </div>
+                    </div>
+                    
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-3 tracking-tight">
+                        Join <span class="text-gradient bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">SafeGuard</span>
+                    </h1>
+                    <p class="text-white/70 text-base sm:text-lg font-medium">Create your safety profile and protect what matters most</p>
+                </header>
+
+                <!-- Signup Form -->
+                <form id="signupForm" class="space-y-8 sm:space-y-10 relative z-10">
+                    <!-- Personal Information -->
+                    <section class="form-section">
+                        <div class="section-header">
+                            <div class="section-icon bg-gradient-to-br from-blue-500 to-cyan-500">
+                                <i class="fas fa-user text-white"></i>
+                            </div>
+                            <h3 class="section-title">Personal Information</h3>
+                        </div>
+                        
+                        <div class="form-grid">
+                            <!-- First Name -->
+                            <div class="form-field">
+                                <label class="field-label">
+                                    <span>First Name</span>
+                                    <span class="required-indicator">*</span>
+                                </label>
+                                <div class="input-wrapper">
+                                    <input 
+                                        type="text" 
+                                        id="firstName" 
+                                        class="form-input focus:border-pink-400 focus:ring-pink-400"
+                                        placeholder="Enter your first name"
+                                        required
+                                    >
+                                    <div class="input-icon">
+                                        <i class="fas fa-user-circle text-white/40"></i>
+                                    </div>
+                                </div>
+                                <div id="firstNameError" class="field-error"></div>
+                            </div>
+
+                            <!-- Last Name -->
+                            <div class="form-field">
+                                <label class="field-label">
+                                    <span>Last Name</span>
+                                    <span class="required-indicator">*</span>
+                                </label>
+                                <div class="input-wrapper">
+                                    <input 
+                                        type="text" 
+                                        id="lastName" 
+                                        class="form-input focus:border-pink-400 focus:ring-pink-400"
+                                        placeholder="Enter your last name"
+                                        required
+                                    >
+                                    <div class="input-icon">
+                                        <i class="fas fa-user-circle text-white/40"></i>
+                                    </div>
+                                </div>
+                                <div id="lastNameError" class="field-error"></div>
+                            </div>
+
+                            <!-- Middle Name (Full Width) -->
+                            <div class="form-field col-span-full">
+                                <label class="field-label">Middle Name</label>
+                                <div class="input-wrapper">
+                                    <input 
+                                        type="text" 
+                                        id="middleName" 
+                                        class="form-input focus:border-pink-400 focus:ring-pink-400"
+                                        placeholder="Enter your middle name (optional)"
+                                    >
+                                    <div class="input-icon">
+                                        <i class="fas fa-user text-white/40"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Contact Information -->
+                    <section class="form-section">
+                        <div class="section-header">
+                            <div class="section-icon bg-gradient-to-br from-purple-500 to-indigo-500">
+                                <i class="fas fa-address-book text-white"></i>
+                            </div>
+                            <h3 class="section-title">Contact Information</h3>
+                        </div>
+                        
+                        <div class="form-grid">
+                            <!-- Email (Full Width) -->
+                            <div class="form-field col-span-full">
+                                <label class="field-label">
+                                    <span>Email Address</span>
+                                    <span class="required-indicator">*</span>
+                                </label>
+                                <div class="input-wrapper">
+                                    <input 
+                                        type="email" 
+                                        id="email" 
+                                        class="form-input focus:border-purple-400 focus:ring-purple-400"
+                                        placeholder="Enter your email address"
+                                        required
+                                    >
+                                    <div class="input-icon">
+                                        <i class="fas fa-envelope text-white/40"></i>
+                                    </div>
+                                </div>
+                                <div id="emailError" class="field-error"></div>
+                            </div>
+
+                            <!-- Phone -->
+                            <div class="form-field">
+                                <label class="field-label">Phone Number</label>
+                                <div class="input-wrapper">
+                                    <input 
+                                        type="tel" 
+                                        id="phone" 
+                                        class="form-input focus:border-purple-400 focus:ring-purple-400"
+                                        placeholder="Enter your phone number"
+                                    >
+                                    <div class="input-icon">
+                                        <i class="fas fa-phone text-white/40"></i>
+                                    </div>
+                                </div>
+                                <div id="phoneError" class="field-error"></div>
+                            </div>
+
+                            <!-- Address -->
+                            <div class="form-field">
+                                <label class="field-label">Address</label>
+                                <div class="input-wrapper">
+                                    <input 
+                                        type="text" 
+                                        id="address" 
+                                        class="form-input focus:border-purple-400 focus:ring-purple-400"
+                                        placeholder="Enter your address"
+                                    >
+                                    <div class="input-icon">
+                                        <i class="fas fa-map-marker-alt text-white/40"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Security -->
+                    <section class="form-section">
+                        <div class="section-header">
+                            <div class="section-icon bg-gradient-to-br from-teal-500 to-emerald-500">
+                                <i class="fas fa-shield-alt text-white"></i>
+                            </div>
+                            <h3 class="section-title">Security & Privacy</h3>
+                        </div>
+                        
+                        <div class="form-grid">
+                            <!-- Password -->
+                            <div class="form-field col-span-full">
+                                <label class="field-label">
+                                    <span>Create Password</span>
+                                    <span class="required-indicator">*</span>
+                                </label>
+                                <div class="input-wrapper">
+                                    <input 
+                                        type="password" 
+                                        id="password" 
+                                        class="form-input pr-16 focus:border-teal-400 focus:ring-teal-400"
+                                        placeholder="Create a strong password"
+                                        required
+                                    >
+                                    <div class="input-icon">
+                                        <i class="fas fa-lock text-white/40"></i>
+                                    </div>
+                                    <button type="button" id="togglePassword" class="password-toggle">
+                                        <i class="fas fa-eye text-sm"></i>
+                                    </button>
+                                </div>
+                                <div id="passwordError" class="field-error"></div>
+                                
+                                <!-- Password Strength -->
+                                <div id="passwordStrength" class="password-strength hidden">
+                                    <div class="strength-header">
+                                        <span class="text-white/80 text-sm font-medium">Password Strength:</span>
+                                        <div class="strength-bar-container">
+                                            <div id="strengthBar" class="strength-bar"></div>
+                                        </div>
+                                        <span id="strengthText" class="strength-text"></span>
+                                    </div>
+                                    
+                                    <!-- Requirements -->
+                                    <div id="requirements" class="requirements-grid">
+                                        <div id="req-length" class="requirement-item">
+                                            <i class="fas fa-times text-red-400"></i>
+                                            <span class="text-white/70">8+ characters</span>
+                                        </div>
+                                        <div id="req-uppercase" class="requirement-item">
+                                            <i class="fas fa-times text-red-400"></i>
+                                            <span class="text-white/70">Uppercase (A-Z)</span>
+                                        </div>
+                                        <div id="req-lowercase" class="requirement-item">
+                                            <i class="fas fa-times text-red-400"></i>
+                                            <span class="text-white/70">Lowercase (a-z)</span>
+                                        </div>
+                                        <div id="req-number" class="requirement-item">
+                                            <i class="fas fa-times text-red-400"></i>
+                                            <span class="text-white/70">Number (0-9)</span>
+                                        </div>
+                                        <div id="req-special" class="requirement-item">
+                                            <i class="fas fa-times text-red-400"></i>
+                                            <span class="text-white/70">Special (!@#$%)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Confirm Password -->
+                            <div class="form-field col-span-full">
+                                <label class="field-label">
+                                    <span>Confirm Password</span>
+                                    <span class="required-indicator">*</span>
+                                </label>
+                                <div class="input-wrapper">
+                                    <input 
+                                        type="password" 
+                                        id="confirmPassword" 
+                                        class="form-input pr-16 focus:border-teal-400 focus:ring-teal-400"
+                                        placeholder="Confirm your password"
+                                        required
+                                    >
+                                    <div class="input-icon">
+                                        <i class="fas fa-lock text-white/40"></i>
+                                    </div>
+                                    <button type="button" id="toggleConfirmPassword" class="password-toggle">
+                                        <i class="fas fa-eye text-sm"></i>
+                                    </button>
+                                </div>
+                                <div id="confirmPasswordError" class="field-error"></div>
+                                
+                                <!-- Password Match Indicators -->
+                                <div id="passwordMatch" class="password-match hidden">
+                                    <i class="fas fa-check-circle text-green-400"></i>
+                                    <span class="text-green-400 font-medium">Passwords match perfectly!</span>
+                                </div>
+                                <div id="passwordMismatch" class="password-mismatch hidden">
+                                    <i class="fas fa-times-circle text-red-400"></i>
+                                    <span class="text-red-400 font-medium">Passwords do not match</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Submit Button -->
+                    <div class="submit-section">
+                        <button 
+                            type="submit" 
+                            id="signupBtn"
+                            class="signup-button"
+                            disabled
+                        >
+                            <span class="button-content">
+                                <span id="signupBtnText">Complete Required Fields</span>
+                                <i id="signupSpinner" class="fas fa-spinner fa-spin ml-3 hidden"></i>
+                            </span>
+                            <div class="button-shine"></div>
+                        </button>
+                    </div>
+
+                    <!-- Form Status -->
+                    <div id="formStatus" class="form-status">
+                        <div class="status-message">
+                            <i class="fas fa-exclamation-triangle text-yellow-400"></i>
+                            <span class="text-yellow-400 font-medium">Please complete all required fields and ensure passwords meet all requirements</span>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Footer Links -->
+                <footer class="mt-10 space-y-4 text-center relative z-10">
+                    <!-- Login Link -->
+                    <div class="login-link">
+                        <p class="text-white/70 text-sm">
+                            Already have an account? 
+                            <a href="index.html" class="link-styled text-pink-400 hover:text-pink-300 font-semibold underline underline-offset-2 transition-all duration-300">
+                                Sign in here
+                            </a>
+                        </p>
+                    </div>
+
+                    <!-- Security Notice -->
+                    <div class="security-notice">
+                        <div class="security-badge">
+                            <i class="fas fa-shield-check text-emerald-400"></i>
+                            <span class="text-white/60 text-sm font-medium">Your data is protected with end-to-end encryption</span>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="fixed top-4 right-4 z-50 space-y-2"></div>
+
+    <script src="./js/utils.js"></script>
+    <script src="./js/signup.js"></script>
+</body>
+</html>
